@@ -1,6 +1,6 @@
-const fs = require('fs');
-
-fs.writeFile('file.txt', 'Hello World from Write Feature!', function (err) {
-  if (err) throw err;
-  console.log('File saved!');
-});
+const http = require('http');
+http.createServer(function (req, res) {
+ res.writeHead(200, {'Content-Type': 'text/html'});
+ res.write('Hello World!');
+ res.end();
+}).listen(3000);
